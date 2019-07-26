@@ -1,0 +1,8 @@
+﻿<?xml version="1.0"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="DrawingFinder" Language="1033" Version="1.0.0.0" UpgradeCode="9C94D2CD-5F43-4693-9C2D-8F35E5CB0220" Manufacturer="Kenny">
+		<Package Description="Find Drawings on Server" Comments="Comments" InstallerVersion="200" Compressed="yes" />
+	<Media Id="1" Cabinet="contents.cab" EmbedCab="yes" CompressionLevel="high"/>
+	<Directory Id="TARGETDIR" Name="SourceDir"/> 
+	</Product>
+</Wix>

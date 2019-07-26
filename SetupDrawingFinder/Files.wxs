@@ -1,0 +1,47 @@
+﻿<?xml version="1.0"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+		<DirectoryRef Id="TARGETDIR">
+			<Directory Id="ProgramFilesFolder" Name="PFiles">
+				<Directory Id="INSTALLDIR" Name="DrawingFinder">
+					<Component Id="MyComponent" Guid="39099377-7E79-4840-A23F-BBA3C81BA2A3" DiskId="1">
+						<File Id="LicenseFile" Name="license.rtf" Source="license.rtf" />
+					</Component>
+					<Directory Id="Release" Name="Release">
+						<Component Id="DapperDll" Guid="960FAD16-DEC3-4B6E-BBDA-893952462F0B" DiskId="1">
+							<File Id="Dapper.dll" Name="Dapper.dll" Source="..\DrawingFinder\bin\Release\Dapper.dll" KeyPath="yes" />
+						</Component>
+						<Component Id="DapperXml" Guid="7D8B4306-6F19-4AE0-8CA0-A8FBBC053BEE" DiskId="1">
+							<File Id="Dapper.xml" Name="Dapper.xml" Source="..\DrawingFinder\bin\Release\Dapper.xml" KeyPath="yes" />
+						</Component>
+						<Component Id="DrawingFinderExe" Guid="9DF1C174-1CA7-4A90-91A2-8222B033CA1A" DiskId="1">
+							<File Id="DrawingFinder.exe" Name="DrawingFinder.exe" Source="..\DrawingFinder\bin\Release\DrawingFinder.exe" KeyPath="yes" />
+						</Component>
+						<Component Id="DrawingFinderexeConfig" Guid="0A131C7C-D7A0-48F0-9C87-1157533F02E5" DiskId="1">
+							<File Id="DrawingFinder.exe.config" Name="DrawingFinder.exe.config" Source="..\DrawingFinder\bin\Release\DrawingFinder.exe.config" KeyPath="yes" />
+						</Component>
+						<Component Id="Ea_drawingsDb" Guid="20B3D9C2-6564-435F-9A47-5CCA7361412E" DiskId="1">
+							<File Id="ea_drawings.db" Name="ea_drawings.db" Source="..\DrawingFinder\bin\Release\ea_drawings.db" KeyPath="yes" />
+						</Component>
+						<Component Id="SystemDataSQLiteDll" Guid="A47545E0-3AC2-40A4-91B8-0BEE2ABDF189" DiskId="1">
+							<File Id="System.Data.SQLite.dll" Name="System.Data.SQLite.dll" Source="..\DrawingFinder\bin\Release\System.Data.SQLite.dll" KeyPath="yes" />
+						</Component>
+						<Component Id="SystemDataSQLiteXml" Guid="37476003-5985-4AF2-9EB1-3DD32E1DB49F" DiskId="1">
+							<File Id="System.Data.SQLite.xml" Name="System.Data.SQLite.xml" Source="..\DrawingFinder\bin\Release\System.Data.SQLite.xml" KeyPath="yes" />
+						</Component>
+						<Directory Id="x64" Name="x64">
+							<Component Id="SQLiteInteropDll" Guid="E65162C1-7345-4D2E-8460-D0B61FBE9570" DiskId="1">
+								<File Id="SQLite.Interop.dll" Name="SQLite.Interop.dll" Source="..\DrawingFinder\bin\Release\x64\SQLite.Interop.dll" KeyPath="yes" />
+							</Component>
+						</Directory>
+						<Directory Id="x86" Name="x86">
+							<Component Id="X86SQLiteInteropDll" Guid="12C142A4-0AFA-4C02-9208-17CFB9CACBB0" DiskId="1">
+								<File Id="x86.SQLite.Interop.dll" Name="SQLite.Interop.dll" Source="..\DrawingFinder\bin\Release\x86\SQLite.Interop.dll" KeyPath="yes" />
+							</Component>
+						</Directory>
+					</Directory>
+				</Directory>
+			</Directory>
+		</DirectoryRef>
+	</Fragment>
+</Wix>
