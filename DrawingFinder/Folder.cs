@@ -14,8 +14,20 @@ namespace DrawingFinder
 	/// Description of Class1.
 	/// </summary>
 	public class Folder
+	{
+		public string folder_name { get; set; }
+		public string location { get; set; }
+		
+		public Folder()
 		{
-			public string folder_name {get;set;}
-			public string location {get;set;}
 		}
+		
+		public Folder(string _folder_name, string _location)
+		{
+			folder_name = _folder_name;
+			location = _location;
+		}
+	}
+	
+	
 }

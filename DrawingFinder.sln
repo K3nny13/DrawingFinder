@@ -4,8 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # SharpDevelop 5.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrawingFinder", "DrawingFinder\DrawingFinder.csproj", "{F89ED846-670E-4349-845B-C0252764CCEA}"
 EndProject
-Project("{CFEE4113-1246-4D54-95CB-156813CB8593}") = "SetupDrawingFinder", "SetupDrawingFinder\SetupDrawingFinder.wixproj", "{731816BE-B984-4E7B-A155-5EC9C569D2EF}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -16,9 +14,5 @@ Global
 		{F89ED846-670E-4349-845B-C0252764CCEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F89ED846-670E-4349-845B-C0252764CCEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F89ED846-670E-4349-845B-C0252764CCEA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{731816BE-B984-4E7B-A155-5EC9C569D2EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{731816BE-B984-4E7B-A155-5EC9C569D2EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{731816BE-B984-4E7B-A155-5EC9C569D2EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{731816BE-B984-4E7B-A155-5EC9C569D2EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

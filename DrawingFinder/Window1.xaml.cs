@@ -8,14 +8,8 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
 using System.Diagnostics;
 
 namespace DrawingFinder
@@ -25,77 +19,71 @@ namespace DrawingFinder
 	/// </summary>
 	public partial class Window1 : Window
 	{
-        List<Folder> folders = new List<Folder>();
-        string results;
+		List<Folder> folders = new List<Folder>();
+		string results;
 
 		public Window1()
 		{
 			InitializeComponent();
 
-            textbox1.Focus();
+			textbox1.Focus();
 
-            textbox1.KeyDown += Textbox1_KeyDown;
+			textbox1.KeyDown += Textbox1_KeyDown;
 
 		}
 
-        private void Textbox1_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Enter)
-            {
-                Search();
-            }
-        }
-
-        void Search()
+		private void Textbox1_KeyDown(object sender, KeyEventArgs e)
 		{
-            datagrid1.IsReadOnly = true;
+			if (e.Key == Key.Enter) {
+				Search();
+			}
+		}
 
-            string search = textbox1.Text;
+		void Search()
+		{
+			datagrid1.IsReadOnly = true;
 
-            if (search.Length == 0)
-            {
-                MessageBox.Show("Please type in the Search Field");
+			string search = textbox1.Text;
+
+			if (search.Length == 0) {
+				MessageBox.Show("Please type in the Search Field");
                 
-            }
-
-            else
-            {
-                folders = SqliteDataAccess.LoadFolders(search);
+			} else {
+				folders = SqliteDataAccess.LoadFolders(search);
                 
-                resultsLabel.Content = folders.Count;
+				resultsLabel.Content = folders.Count;
 
-                if (folders.Count == 0)
-                {
-                	resultsLabel.Content = folders.Count;
-                    MessageBox.Show("No Results Found");
-                }
-                else
-                {
-                	results = string.Format("Results: {0}", folders.Count);
+				if (folders.Count == 0) {
+					resultsLabel.Content = folders.Count;
+					MessageBox.Show("No Results Found");
+				} else {
+					results = string.Format("Results: {0}", folders.Count);
                 	
-                	resultsLabel.Content = results;
+					resultsLabel.Content = results;
                 	     	
-                    datagrid1.Items.Clear();
+					datagrid1.Items.Clear();
 
-                    for (int i = 0; i < folders.Count; i++)
-                    {
-                        datagrid1.Items.Add(new Folder{ folder_name = folders[i].folder_name.ToString(), location = folders[i].location.ToString() });
-                    }
-                }
+					for (int i = 0; i < folders.Count; i++) {
+						datagrid1.Items.Add(new Folder {
+							folder_name = folders[i].folder_name.ToString(),
+							location = folders[i].location.ToString()
+						});
+					}
+				}
 
 
-            }
+			}
 
 
-        }
+		}
 
-        private void Row_DoubleClick(object sender, MouseButtonEventArgs e)
-        {
-        	var test = (Folder)datagrid1.SelectedValue;
-            // Some operations with this row
-            string path = string.Format(@"{0}", test.location);
-            Process.Start("explorer.exe", path);
-        }
+		private void Row_DoubleClick(object sender, MouseButtonEventArgs e)
+		{
+			var test = (Folder)datagrid1.SelectedValue;
+			// Some operations with this row
+			string path = string.Format(@"{0}", test.location);
+			Process.Start("explorer.exe", path);
+		}
 
-    }
+	}
 }
