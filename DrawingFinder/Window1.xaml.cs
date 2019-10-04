@@ -54,7 +54,9 @@ namespace DrawingFinder
 				resultsLabel.Content = folders.Count;
 
 				if (folders.Count == 0) {
-					resultsLabel.Content = folders.Count;
+					results = string.Format("Results: {0}", folders.Count);
+					resultsLabel.Content = results;
+					datagrid1.Items.Clear();
 					MessageBox.Show("No Results Found");
 				} else {
 					results = string.Format("Results: {0}", folders.Count);
@@ -79,9 +81,9 @@ namespace DrawingFinder
 
 		private void Row_DoubleClick(object sender, MouseButtonEventArgs e)
 		{
-			var test = (Folder)datagrid1.SelectedValue;
+			var folder = (Folder)datagrid1.SelectedValue;
 			// Some operations with this row
-			string path = string.Format(@"{0}", test.location);
+			string path = string.Format(@"{0}", folder.location);
 			Process.Start("explorer.exe", path);
 		}
 

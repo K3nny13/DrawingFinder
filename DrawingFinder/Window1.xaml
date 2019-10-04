@@ -2,13 +2,13 @@
 <Window
 	x:Class="DrawingFinder.Window1" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	Title="DrawingFinder"
-	Height="458"
-	MinWidth="1005"
-	MinHeight="458"
-	Width="1101">
+	MinHeight="470"
+	Height="470"
+	Width="1100"
+	MinWidth="1100">
 	<Grid
-		Background="#FF545454"
-		Cursor="Cross">
+		Cursor="Cross"
+		Background="#FF545454">
 		<Label
 			Content="DrawingFinder"
 			Height="95"
@@ -22,7 +22,7 @@
 			Grid.Row="0"
 			HorizontalAlignment="Left"
 			VerticalAlignment="Top"
-			Margin="14,4.5,0,0" />
+			Margin="13.9999999999999,-3.00000000000003,0,0" />
 		<TextBox
 			Text="{Binding myText}"
 			x:Name="textbox1"
@@ -34,7 +34,7 @@
 			Grid.Row="0"
 			HorizontalAlignment="Right"
 			VerticalAlignment="Top"
-			Margin="0,52,0,0" />
+			Margin="0,52,15,0" />
 		<Label
 			Content="Search"
 			Width="116"
@@ -46,7 +46,7 @@
 			Grid.Row="0"
 			HorizontalAlignment="Right"
 			VerticalAlignment="Top"
-			Margin="0,8,401,0" />
+			Margin="0,7.99999999999997,416,0" />
 		<Label
 			HorizontalContentAlignment="Right"
 			x:Name="resultsLabel"
@@ -61,32 +61,38 @@
 			Grid.Row="0"
 			HorizontalAlignment="Right"
 			VerticalAlignment="Top"
-			Margin="0,8,0,0" />
+			Margin="0,7.99999999999997,15,0" />
 		<DataGrid
 			FontSize="14"
 			FontWeight="Bold"
 			x:Name="datagrid1"
 			MinWidth="965"
 			MinHeight="321"
-			Background="#FFC1C1C1"
 			AlternationCount="2"
-			AlternatingRowBackground="LightBlue"
 			BorderBrush="#FF878787"
 			Grid.Column="0"
 			Grid.ColumnSpan="2"
 			Grid.Row="0"
 			HorizontalAlignment="Center"
 			VerticalAlignment="Stretch"
-			Margin="0,113,0,-8">
+			Margin="0,105,0,0"
+			Background="#FF545454"
+			HorizontalGridLinesBrush="Snow"
+			VerticalGridLinesBrush="Snow"
+			Foreground="Snow"
+			AlternatingRowBackground="DarkGray"
+			RowBackground="#FF99B4D1">
 			<DataGrid.Columns>
 				<DataGridTextColumn
 					Header="Folder Name"
 					Binding="{Binding folder_name}"
-					Width="300" />
+					Width="300"
+					Foreground="Black" />
 				<DataGridTextColumn
 					Header="Folder Location"
 					Binding="{Binding location}"
-					Width="*" />
+					Width="*"
+					Foreground="Black" />
 			</DataGrid.Columns>
 			<DataGrid.Resources>
 				<Style
@@ -100,17 +106,21 @@
 							Value="True">
 							<Setter
 								Property="Foreground"
-								Value="CadetBlue" />
+								Value="DarkSlateGray" />
 						</Trigger>
 					</Style.Triggers>
 				</Style>
+				<Style
+					BasedOn="{StaticResource {x:Type DataGridColumnHeader}}"
+					TargetType="{x:Type DataGridColumnHeader}">
+					<Setter
+						Property="Background"
+						Value="#FF545454" />
+					<Setter
+						Property="Foreground"
+						Value="White" />
+				</Style>
 			</DataGrid.Resources>
 		</DataGrid>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition
-				Width="0.985929648241206*" />
-			<ColumnDefinition
-				Width="0.014070351758794*" />
-		</Grid.ColumnDefinitions>
 	</Grid>
 </Window>

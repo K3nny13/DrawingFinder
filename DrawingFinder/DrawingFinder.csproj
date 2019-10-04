@@ -14,7 +14,7 @@
     </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
     <NoWin32Manifest>False</NoWin32Manifest>
-    <ApplicationIcon>DrawingFinderIcon.ico</ApplicationIcon>
+    <ApplicationIcon>Icon\DrawingFinderIcon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
     <PlatformTarget>x86</PlatformTarget>
