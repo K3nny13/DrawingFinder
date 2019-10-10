@@ -66,10 +66,10 @@ namespace DrawingFinder
 					datagrid1.Items.Clear();
 
 					for (int i = 0; i < folders.Count; i++) {
-						datagrid1.Items.Add(new Folder {
-							folder_name = folders[i].folder_name.ToString(),
-							location = folders[i].location.ToString()
-						});
+						datagrid1.Items.Add(new Folder(
+							folders[i].folder_name.ToString(),
+							folders[i].location.ToString()
+						));
 					}
 				}
 
